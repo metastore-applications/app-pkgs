@@ -16,7 +16,7 @@ class API {
 	 * @return array
 	 */
 	public static function get( $org ) {
-		$token = Parser::json( Config::get( 'app/config/api.json' ) );
+		$token = Config::get( 'api' );
 		$token = $token['api']['github']['token'];
 		$api   = 'https://api.github.com/orgs/' . $org . '/repos?access_token=' . $token;
 		$out   = Cache::json( $api );
