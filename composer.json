@@ -1,6 +1,6 @@
 {
 	"name": "metastore/app-pkgs",
-	"type": "project",
+	"type": "library",
 	"description": "",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://metastore.pro",
