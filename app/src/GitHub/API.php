@@ -2,21 +2,24 @@
 
 namespace METASTORE\App\Packages\GitHub;
 
-use METASTORE\App\Kernel\{Cache, Date};
+use METASTORE\App\Kernel\{Cache, Config, Date, Parser};
 
 /**
  * Class API
  * @package METASTORE\App\Packages\GitHub
  */
 class API {
+
 	/**
 	 * @param $org
 	 *
 	 * @return array
 	 */
 	public static function get( $org ) {
-		$api = 'https://api.github.com/orgs/' . $org . '/repos?access_token=a7a2df1bf5a5a336f22369ecabc922a6cf00e3b8';
-		$out = Cache::json( $api );
+		$token = Parser::json( Config::get( 'app/config/api.json' ) );
+		$token = $token['api']['github']['token'];
+		$api   = 'https://api.github.com/orgs/' . $org . '/repos?access_token=' . $token;
+		$out   = Cache::json( $api );
 
 		return $out;
 	}

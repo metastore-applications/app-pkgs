@@ -59,7 +59,7 @@ class App {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static function Run() {
 		$page = self::getCards() ? 'cards' : 'home';
