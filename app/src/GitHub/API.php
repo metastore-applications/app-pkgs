@@ -4,6 +4,10 @@ namespace METASTORE\App\Packages\GitHub;
 
 use METASTORE\App\Kernel\{Cache, Date};
 
+/**
+ * Class API
+ * @package METASTORE\App\Packages\GitHub
+ */
 class API {
 	/**
 	 * @param $org

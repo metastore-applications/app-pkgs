@@ -4,6 +4,10 @@ namespace METASTORE\App\Packages\Card;
 
 use METASTORE\App\Packages\GitHub\API;
 
+/**
+ * Class Card
+ * @package METASTORE\App\Packages\Card
+ */
 class Card {
 	public static function outCard( $entry ) {
 		$out = '<div class="column"><div class="card">';

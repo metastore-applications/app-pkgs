@@ -4,6 +4,10 @@ namespace METASTORE\App\Packages\Card;
 
 use METASTORE\App\Packages\GitHub\API;
 
+/**
+ * Class Cards
+ * @package METASTORE\App\Packages\Card
+ */
 class Cards {
 	/**
 	 * @param $org
