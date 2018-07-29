@@ -2,7 +2,7 @@
 
 namespace METASTORE\App\Packages\GitHub;
 
-use METASTORE\App\Kernel\{Cache, Config, Date, Parser};
+use METASTORE\App\Kernel\{Config, cURL, Date};
 
 /**
  * Class API
@@ -19,7 +19,7 @@ class API {
 		$token = Config::get( 'api' );
 		$token = $token['api']['github']['token'];
 		$api   = 'https://api.github.com/orgs/' . $org . '/repos?access_token=' . $token;
-		$out   = Cache::json( $api );
+		$out   = cURL::getJSON( $api );
 
 		return $out;
 	}
