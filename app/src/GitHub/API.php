@@ -10,8 +10,8 @@ class API {
 	 *
 	 * @return array
 	 */
-	public static function getAPI( $org ) {
-		$api = 'https://api.github.com/orgs/' . $org . '/repos?access_token=c9ec979f4c334f86d15d8a7cbbc23622c6dbcf53';
+	public static function get( $org ) {
+		$api = 'https://api.github.com/orgs/' . $org . '/repos?access_token=a7a2df1bf5a5a336f22369ecabc922a6cf00e3b8';
 		$out = Cache::json( $api );
 
 		return $out;

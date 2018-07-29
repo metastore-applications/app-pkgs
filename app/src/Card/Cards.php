@@ -11,7 +11,7 @@ class Cards {
 	 * @return string
 	 */
 	public static function outCards( $org ) {
-		$api   = API::getAPI( $org );
+		$api   = API::get( $org );
 		$out   = '';
 		$count = 0;
 		foreach ( $api as $entry ) {

@@ -1,5 +1,7 @@
-<?php require_once( __DIR__ . '/../_common/header.php' ); ?>
-<?php require_once( __DIR__ . '/../_common/navbar.php' ); ?>
+<?php use METASTORE\App\Kernel\View; ?>
+
+<?php View::get( 'header', '_common' ); ?>
+<?php View::get( 'navbar', '_common' ); ?>
 
 	<!-- section-main -->
 	<section id="section-main" class="section">
@@ -9,4 +11,4 @@
 	</section>
 	<!-- / section-main -->
 
-<?php require_once( __DIR__ . '/../_common/footer.php' ); ?>
+<?php View::get( 'footer', '_common' ); ?>

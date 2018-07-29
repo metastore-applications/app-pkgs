@@ -5,25 +5,18 @@ namespace METASTORE\App\Packages;
 use METASTORE\App\Kernel\{Parser, Request, View};
 use METASTORE\App\Packages\Card\Cards;
 
+/**
+ * Class App
+ * @package METASTORE\App\Packages
+ */
 class App {
 
 	/**
 	 * @return string
 	 */
 	public static function getType() {
-		$valid = [
-			'xenforo',
-			'flarum',
-			'wordpress',
-			'mediawiki',
-		];
-
-		$type = Request::get( $_GET['type'] ?? '' ?: '' );
+		$type = Request::get( 'type' );
 		$out  = Parser::normalize( $type );
-
-		if ( ! in_array( $out, $valid ) ) {
-			return false;
-		}
 
 		return $out;
 	}
@@ -42,30 +35,34 @@ class App {
 	/**
 	 * @return bool
 	 */
-	public static function Run() {
+	public static function getCards() {
 		$cards = new Cards();
 
 		switch ( self::getType() ) {
 			case 'mediawiki';
-				$outCards = $cards->outCards( 'metastore-mediawiki' );
+				$out = $cards->outCards( 'metastore-mediawiki' );
 				break;
 			case 'xenforo';
-				$outCards = $cards->outCards( 'metastore-xenforo' );
+				$out = $cards->outCards( 'metastore-xenforo' );
 				break;
 			case 'flarum';
-				$outCards = $cards->outCards( 'metastore-flarum' );
+				$out = $cards->outCards( 'metastore-flarum' );
 				break;
 			case 'wordpress';
-				$outCards = $cards->outCards( 'metastore-wordpress' );
+				$out = $cards->outCards( 'metastore-wordpress' );
 				break;
 			default:
-				$outCards = 0;
+				return false;
 		}
 
-		$page = $outCards ? 'cards' : 'home';
+		return $out;
+	}
 
+	/**
+	 *
+	 */
+	public static function Run() {
+		$page = self::getCards() ? 'cards' : 'home';
 		View::get( $page, 'pages' );
-
-		return true;
 	}
 }

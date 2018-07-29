@@ -1,6 +1,6 @@
 <?php namespace METASTORE\App\Packages;
-use METASTORE\App\Kernel\Route;
-?>
+
+use METASTORE\App\Kernel\Route; ?>
 
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top" dir="ltr" lang="ru">
@@ -35,9 +35,8 @@ use METASTORE\App\Kernel\Route;
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i|Roboto:400,400i,700,700i|Fira+Mono:400,700&amp;subset=cyrillic" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox/dist/jquery.fancybox.min.css" />
-	<link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" />
-	<link type="text/css" rel="stylesheet" href="/core/themes/default/styles/theme.css" />
+	<link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
+	<link type="text/css" rel="stylesheet" href="/resources/assets/styles/theme.css" />
 	<!-- / styles -->
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
