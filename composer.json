@@ -1,6 +1,6 @@
 {
 	"name": "metastore/app-pkgs",
-	"type": "library",
+	"type": "project",
 	"description": "",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://metastore.pro",
@@ -32,7 +32,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"METASTORE\\App\\Packages\\": "src/"
+			"METASTORE\\App\\Packages\\": "app/src/"
 		}
 	},
 	"config": {
