@@ -1,13 +1,11 @@
 <nav class="navbar has-shadow is-fixed-top is-transparent" itemscope itemtype="http://schema.org/SiteNavigationElement">
 	<div class="navbar-brand">
-		<div class="navbar-item">
-			<h1><a href="/">METASTORE / APPS</a></h1>
-		</div>
-		<button class="button navbar-burger" data-target="navMenu">
+		<h1 class="navbar-item"><a href="/">METASTORE / APPS</a></h1>
+		<a class="navbar-burger" data-target="navMenu">
 			<span></span>
 			<span></span>
 			<span></span>
-		</button>
+		</a>
 	</div>
 	<div id="navMenu" class="navbar-menu">
 		<div class="navbar-end">
