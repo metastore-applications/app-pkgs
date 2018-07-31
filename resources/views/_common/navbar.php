@@ -1,4 +1,4 @@
-<nav class="navbar has-shadow is-fixed-top is-transparent" itemscope itemtype="http://schema.org/SiteNavigationElement">
+<nav class="navbar" itemscope itemtype="http://schema.org/SiteNavigationElement">
 	<div class="navbar-brand">
 		<h1 class="navbar-item"><a href="/">METASTORE / APPS</a></h1>
 		<a class="navbar-burger" data-target="navMenu">

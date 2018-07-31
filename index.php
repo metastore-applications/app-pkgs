@@ -1,6 +1,6 @@
 <?php
 
-namespace METASTORE\App\Packages;
+namespace MetaStore\App\Packages;
 
 require_once( __DIR__ . '/vendor/autoload.php' );
 

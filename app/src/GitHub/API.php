@@ -1,12 +1,12 @@
 <?php
 
-namespace METASTORE\App\Packages\GitHub;
+namespace MetaStore\App\Packages\GitHub;
 
-use METASTORE\App\Kernel\{Config, cURL, Date};
+use MetaStore\App\Kernel\{Config, cURL, Date};
 
 /**
  * Class API
- * @package METASTORE\App\Packages\GitHub
+ * @package MetaStore\App\Packages\GitHub
  */
 class API {
 
@@ -15,7 +15,7 @@ class API {
 	 *
 	 * @return array
 	 */
-	public static function get( $org ) {
+	public static function getAPI( $org = '' ) {
 		$token = Config::getFile( 'api' );
 		$token = $token['api']['github']['token'];
 		$api   = 'https://api.github.com/orgs/' . $org . '/repos?access_token=' . $token;
@@ -30,8 +30,8 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outOwner( $name, $url ) {
-		$out = '<span itemprop="author"><a href="' . $url . '" target="_blank" itemprop="url"><span itemprop="name">@' . $name . '</span></a></span>';
+	public static function getOwner( $name = '', $url = '' ) {
+		$out = '<a href="' . $url . '" target="_blank"><span itemprop="author">@' . $name . '</span></a>';
 
 		return $out;
 	}
@@ -42,7 +42,7 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outOwnerAvatar( $url, $src ) {
+	public static function getOwnerAvatar( $url = '', $src = '' ) {
 		$out = '<a href="' . $url . '" target="_blank"><figure class="image is-64x64"><img src="' . $src . '" alt="" itemprop="image" /></figure></a>';
 
 		return $out;
@@ -54,8 +54,19 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outRepo( $name, $url ) {
-		$out = '<a href="' . $url . '" target="_blank" itemprop="name">' . $name . '</a>';
+	public static function getRepo( $name = '', $url = '' ) {
+		$out = '<a href="' . $url . '" target="_blank" itemprop="url"><span itemprop="name">' . $name . '</span></a>';
+
+		return $out;
+	}
+
+	/**
+	 * @param string $entry
+	 *
+	 * @return string
+	 */
+	public static function getDescription( $entry = '' ) {
+		$out = '<div itemprop="headline">' . $entry . '</div>';
 
 		return $out;
 	}
@@ -66,7 +77,7 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outCountWatchers( $count, $url ) {
+	public static function getCountWatchers( $count = '', $url = '' ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="far fa-eye fa-fw"></i></span>';
 		$out .= '<a class="tag" href="' . $url . '/watchers">' . $count . '</a>';
@@ -81,7 +92,7 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outCountStargazers( $count, $url ) {
+	public static function getCountStargazers( $count = '', $url = '' ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="fas fa-star fa-fw"></i></span>';
 		$out .= '<a class="tag" href="' . $url . '/stargazers">' . $count . '</a>';
@@ -96,7 +107,7 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outCountForks( $count, $url ) {
+	public static function getCountForks( $count = '', $url = '' ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="fas fa-code-branch fa-fw"></i></span>';
 		$out .= '<a class="tag" href="' . $url . '/network">' . $count . '</a>';
@@ -110,7 +121,7 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outHomePage( $url ) {
+	public static function getHomePage( $url = '' ) {
 		$out = '<a href="' . $url . '" target="_blank"><i class="fas fa-home fa-fw"></i></a>';
 
 		return $out;
@@ -121,7 +132,7 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outDateCreate( $date ) {
+	public static function getDateCreate( $date = '' ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="fas fa-plus-square fa-fw"></i></span>';
 		$out .= '<span class="tag" itemprop="dateCreated">' . Date::convert( $date ) . '</span>';
@@ -135,7 +146,7 @@ class API {
 	 *
 	 * @return string
 	 */
-	public static function outDateUpdate( $date ) {
+	public static function getDateUpdate( $date = '' ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="fas fa-edit fa-fw"></i></span>';
 		$out .= '<span class="tag" itemprop="dateModified">' . Date::convert( $date ) . '</span>';
@@ -145,11 +156,11 @@ class API {
 	}
 
 	/**
-	 * @param $date
+	 * @param string $date
 	 *
 	 * @return string
 	 */
-	public static function outDatePush( $date ) {
+	public static function getDatePush( $date = '' ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="fas fa-upload fa-fw"></i></span>';
 		$out .= '<span class="tag" itemprop="datePublished">' . Date::convert( $date ) . '</span>';
@@ -157,4 +168,5 @@ class API {
 
 		return $out;
 	}
+
 }

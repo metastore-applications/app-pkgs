@@ -1,9 +1,9 @@
-<?php namespace METASTORE\App\Packages;
+<?php namespace MetaStore\App\Packages;
 
-use METASTORE\App\Kernel\Route; ?>
+use MetaStore\App\Kernel\Route; ?>
 
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top" dir="ltr" lang="ru">
+<html dir="ltr" lang="ru">
 <head prefix="og: http://ogp.me/ns#">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />

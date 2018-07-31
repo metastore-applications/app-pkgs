@@ -1,21 +1,22 @@
 <?php
 
-namespace METASTORE\App\Packages\Card;
+namespace MetaStore\App\Packages\Card;
 
-use METASTORE\App\Packages\GitHub\API;
+use MetaStore\App\Packages\GitHub\API;
 
 /**
  * Class Cards
- * @package METASTORE\App\Packages\Card
+ * @package MetaStore\App\Packages\Card
  */
 class Cards {
+
 	/**
 	 * @param $org
 	 *
 	 * @return string
 	 */
 	public static function outCards( $org ) {
-		$api   = API::get( $org );
+		$api   = API::getAPI( $org );
 		$out   = '';
 		$count = 0;
 		foreach ( $api as $entry ) {
@@ -38,4 +39,5 @@ class Cards {
 
 		return $out;
 	}
+
 }

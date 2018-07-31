@@ -1,13 +1,13 @@
 <?php
 
-namespace METASTORE\App\Packages;
+namespace MetaStore\App\Packages;
 
-use METASTORE\App\Kernel\{Parser, Request, View};
-use METASTORE\App\Packages\Card\Cards;
+use MetaStore\App\Kernel\{Parser, Request, View};
+use MetaStore\App\Packages\Card\Cards;
 
 /**
  * Class App
- * @package METASTORE\App\Packages
+ * @package MetaStore\App\Packages
  */
 class App {
 
