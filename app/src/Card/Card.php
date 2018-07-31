@@ -2,6 +2,7 @@
 
 namespace METASTORE\App\Packages\Card;
 
+use METASTORE\App\Kernel\Route;
 use METASTORE\App\Packages\GitHub\API;
 
 /**
@@ -10,7 +11,8 @@ use METASTORE\App\Packages\GitHub\API;
  */
 class Card {
 	public static function outCard( $entry ) {
-		$out = '<div class="column"><div class="card">';
+		$out = '<div class="column"><div class="card" itemscope itemtype="http://schema.org/Article">';
+		$out .= '<link itemprop="mainEntityOfPage" href="' . Route::HTTP_HOST() . Route::REQUEST_URI() . '" />';
 		$out .= '<div class="card-content">';
 		$out .= '<div class="media">';
 		$out .= '<div class="media-left">' . API::outOwnerAvatar( $entry['owner']['html_url'], $entry['owner']['avatar_url'] ) . '</div>';

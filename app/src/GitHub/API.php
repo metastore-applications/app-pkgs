@@ -16,7 +16,7 @@ class API {
 	 * @return array
 	 */
 	public static function get( $org ) {
-		$token = Config::get( 'api' );
+		$token = Config::getFile( 'api' );
 		$token = $token['api']['github']['token'];
 		$api   = 'https://api.github.com/orgs/' . $org . '/repos?access_token=' . $token;
 		$out   = cURL::getJSON( $api );
@@ -31,7 +31,7 @@ class API {
 	 * @return string
 	 */
 	public static function outOwner( $name, $url ) {
-		$out = '<a href="' . $url . '" target="_blank">@' . $name . '</a>';
+		$out = '<span itemprop="author"><a href="' . $url . '" target="_blank" itemprop="url"><span itemprop="name">@' . $name . '</span></a></span>';
 
 		return $out;
 	}
@@ -43,7 +43,7 @@ class API {
 	 * @return string
 	 */
 	public static function outOwnerAvatar( $url, $src ) {
-		$out = '<a href="' . $url . '" target="_blank"><figure class="image is-64x64"><img src="' . $src . '" alt=""></figure></a>';
+		$out = '<a href="' . $url . '" target="_blank"><figure class="image is-64x64"><img src="' . $src . '" alt="" itemprop="image" /></figure></a>';
 
 		return $out;
 	}
@@ -55,7 +55,7 @@ class API {
 	 * @return string
 	 */
 	public static function outRepo( $name, $url ) {
-		$out = '<a href="' . $url . '" target="_blank">' . $name . '</a>';
+		$out = '<a href="' . $url . '" target="_blank" itemprop="name">' . $name . '</a>';
 
 		return $out;
 	}
@@ -124,7 +124,7 @@ class API {
 	public static function outDateCreate( $date ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="fas fa-plus-square fa-fw"></i></span>';
-		$out .= '<span class="tag">' . Date::convert( $date ) . '</span>';
+		$out .= '<span class="tag" itemprop="dateCreated">' . Date::convert( $date ) . '</span>';
 		$out .= '</span>';
 
 		return $out;
@@ -138,7 +138,7 @@ class API {
 	public static function outDateUpdate( $date ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="fas fa-edit fa-fw"></i></span>';
-		$out .= '<span class="tag">' . Date::convert( $date ) . '</span>';
+		$out .= '<span class="tag" itemprop="dateModified">' . Date::convert( $date ) . '</span>';
 		$out .= '</span>';
 
 		return $out;
@@ -152,7 +152,7 @@ class API {
 	public static function outDatePush( $date ) {
 		$out = '<span class="tags has-addons">';
 		$out .= '<span class="tag"><i class="fas fa-upload fa-fw"></i></span>';
-		$out .= '<span class="tag">' . Date::convert( $date ) . '</span>';
+		$out .= '<span class="tag" itemprop="datePublished">' . Date::convert( $date ) . '</span>';
 		$out .= '</span>';
 
 		return $out;

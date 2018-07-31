@@ -15,8 +15,8 @@ class App {
 	 * @return string
 	 */
 	public static function getType() {
-		$type = Request::get( 'type' );
-		$out  = Parser::normalize( $type );
+		$type = Request::getParam( 'type' );
+		$out  = Parser::normalizeData( $type );
 
 		return $out;
 	}
