@@ -1,6 +1,6 @@
 <nav class="navbar" itemscope itemtype="http://schema.org/SiteNavigationElement">
 	<div class="navbar-brand">
-		<h1 class="navbar-item"><a href="/">METASTORE / APPS</a></h1>
+		<a class="navbar-item" href="/">METASTORE / APPS</a>
 		<a class="navbar-burger" data-target="navMenu">
 			<span></span>
 			<span></span>
