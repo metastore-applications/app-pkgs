@@ -32,11 +32,15 @@ use MetaStore\App\Kernel\Route; ?>
 	<!-- / twitter -->
 
 	<!-- styles -->
-	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i|Roboto:400,400i,700,700i|Fira+Mono:400,700&amp;subset=cyrillic" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css" />
-	<link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox/dist/jquery.fancybox.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" />
 	<link type="text/css" rel="stylesheet" href="/resources/assets/styles/theme.css" />
 	<!-- / styles -->
+
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<!-- / favicon -->
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
