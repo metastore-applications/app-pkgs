@@ -39,16 +39,16 @@ class App {
 		$cards = new Cards();
 
 		switch ( self::getType() ) {
-			case 'mediawiki';
+			case 'mediawiki':
 				$out = $cards->outCards( 'metastore-mediawiki' );
 				break;
-			case 'xenforo';
+			case 'xenforo':
 				$out = $cards->outCards( 'metastore-xenforo' );
 				break;
-			case 'flarum';
+			case 'flarum':
 				$out = $cards->outCards( 'metastore-flarum' );
 				break;
-			case 'wordpress';
+			case 'wordpress':
 				$out = $cards->outCards( 'metastore-wordpress' );
 				break;
 			default:
@@ -61,7 +61,7 @@ class App {
 	/**
 	 *
 	 */
-	public static function Run() {
+	public static function runApp() {
 		$page = self::getCards() ? 'cards' : 'home';
 		View::get( $page, 'pages' );
 	}
