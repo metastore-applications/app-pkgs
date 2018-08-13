@@ -43,7 +43,9 @@ class API {
 	 * @return string
 	 */
 	public static function getOwnerAvatar( $url = '', $src = '' ) {
-		$out = '<a href="' . $url . '" target="_blank"><figure class="image is-64x64"><img src="' . $src . '" alt="" itemprop="image" /></figure></a>';
+		$out = '<a href="' . $url . '" target="_blank">';
+		$out .= '<figure class="image is-64x64"><img src="' . $src . '" alt="" itemprop="image" /></figure>';
+		$out .= '</a>';
 
 		return $out;
 	}

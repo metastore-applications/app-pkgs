@@ -63,6 +63,6 @@ class App {
 	 */
 	public static function runApp() {
 		$page = self::getCards() ? 'cards' : 'home';
-		View::get( $page, 'pages' );
+		View::get( $page, 'page' );
 	}
 }
