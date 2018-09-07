@@ -3,7 +3,7 @@
 	"type": "project",
 	"description": "",
 	"license": "GPL-3.0-or-later",
-	"homepage": "https://metastore.pro",
+	"homepage": "https://metastore.pro/",
 	"keywords": [
 		"metadata",
 		"metastore",
@@ -22,8 +22,8 @@
 	"support": {
 		"email": "support@metastore.pro",
 		"issues": "https://gitlab.com/metastore/applications/app-starter-kit/issues",
-		"forum": "https://webmasters.community",
-		"wiki": "https://webmasters.wiki",
+		"forum": "https://webmasters.community/",
+		"wiki": "https://webmasters.wiki/",
 		"source": "https://gitlab.com/metastore/applications/app-starter-kit"
 	},
 	"require": {
