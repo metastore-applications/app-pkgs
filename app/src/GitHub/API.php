@@ -11,15 +11,21 @@ use MetaStore\App\Kernel\{Config, cURL, Date};
 class API {
 
 	/**
-	 * @param $org
+	 * @param string $org
+	 * @param float|int $time
 	 *
-	 * @return array
+	 * @return mixed|string
 	 */
-	public static function getAPI( $org = '' ) {
+	public static function getAPI( $org = '', $time = 2 * 60 * 60 ) {
 		$token = Config::getFile( 'api' );
 		$token = $token['api']['github']['token'];
-		$api   = 'https://api.github.com/orgs/' . $org . '/repos?access_token=' . $token;
-		$out   = cURL::getJSON( $api );
+		$api   = 'https://api.github.com/orgs/' . $org . '/repos';
+
+		$header = [
+			'Authorization: token ' . $token,
+		];
+
+		$out = cURL::getJSON( $api, $header, '1', $time );
 
 		return $out;
 	}
